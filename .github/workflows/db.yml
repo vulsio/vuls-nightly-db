@@ -26,17 +26,20 @@ jobs:
         with:
           go-version: "stable"
 
-      - name: vuls nightly install
-        run: go install github.com/MaineK00n/vuls2/cmd/vuls@nightly
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y jq zstd
+          go install go.etcd.io/bbolt/cmd/bbolt@latest
+
+      - name: vuls install
+        run: go install github.com/MaineK00n/vuls2/cmd/vuls@main
 
       - name: make db-build
-        run: make db-build DBPATH=./vuls.db
+        run: make db-build BRANCH=main DBPATH=./vuls.db
 
-      - name: Install bbolt
-        run: go install go.etcd.io/bbolt/cmd/bbolt@latest
-
-      - name: Install Zstd
-        run: sudo apt-get update && sudo apt-get install -y zstd
+      - name: save vuls.db schema_version
+        id: save_scheme_version
+        run: echo "schema_version=$(bbolt get ./vuls.db "metadata" "db" | jq .schema_version)" >> $GITHUB_OUTPUT
 
       - name: compact vuls.db
         run: |
@@ -62,5 +65,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload vuls.db to GHCR
-        run: oras push ghcr.io/vulsio/vuls-nightly-db:latest ./vuls.db.zst:application/vnd.vulsio.vuls.db.layer.v1+zstd
-        # run: oras push ghcr.io/${{ github.repository }}:latest ./vuls.db.zst:application/vnd.vulsio.vuls.db.layer.v1+zstd
+        run: |
+          oras push ghcr.io/vulsio/vuls-nightly-db:${{ steps.save_scheme_version.outputs.schema_version }} ./vuls.db.zst:application/vnd.vulsio.vuls.db.layer.v1+zstd
+          # oras push ghcr.io/vulsio/vuls-nightly-db:latest ./vuls.db.zst:application/vnd.vulsio.vuls.db.layer.v1+zstd
