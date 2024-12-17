@@ -67,4 +67,4 @@ jobs:
       - name: Upload vuls.db to GHCR
         run: |
           oras push ghcr.io/vulsio/vuls-nightly-db:${{ steps.save_scheme_version.outputs.schema_version }} ./vuls.db.zst:application/vnd.vulsio.vuls.db.layer.v1+zstd
-          # oras push ghcr.io/vulsio/vuls-nightly-db:latest ./vuls.db.zst:application/vnd.vulsio.vuls.db.layer.v1+zstd
+          oras push ghcr.io/vulsio/vuls-nightly-db:latest ./vuls.db.zst:application/vnd.vulsio.vuls.db.layer.v1+zstd
