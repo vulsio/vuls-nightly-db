@@ -1,4 +1,4 @@
-name: DB
+name: DB(Nightly)
 on:
   schedule:
     - cron: "0 */6 * * *"
@@ -21,7 +21,7 @@ jobs:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: nightly
 
       - name: Set up Go 1.x
         uses: actions/setup-go@v5
@@ -34,14 +34,10 @@ jobs:
           go install go.etcd.io/bbolt/cmd/bbolt@latest
 
       - name: vuls install
-        run: go install github.com/MaineK00n/vuls2/cmd/vuls@main
+        run: go install github.com/MaineK00n/vuls2/cmd/vuls@nightly
 
       - name: make db-build
-        run: make db-build BRANCH=main DBPATH=./vuls.db
-
-      - name: save vuls.db schema_version
-        id: save_scheme_version
-        run: echo "schema_version=$(bbolt get ./vuls.db "metadata" "db" | jq .schema_version)" >> $GITHUB_OUTPUT
+        run: make db-build BRANCH=nightly DBPATH=./vuls.db
 
       - name: compact vuls.db
         run: |
@@ -68,5 +64,4 @@ jobs:
 
       - name: Upload vuls.db to GHCR
         run: |
-          oras push ghcr.io/vulsio/vuls-nightly-db:${{ steps.save_scheme_version.outputs.schema_version }} ./vuls.db.zst:application/vnd.vulsio.vuls.db.layer.v1+zstd
-          oras push ghcr.io/vulsio/vuls-nightly-db:latest ./vuls.db.zst:application/vnd.vulsio.vuls.db.layer.v1+zstd
+          oras push ghcr.io/vulsio/vuls-nightly-db:nightly ./vuls.db.zst:application/vnd.vulsio.vuls.db.layer.v1+zstd
