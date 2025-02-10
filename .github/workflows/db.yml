@@ -41,7 +41,7 @@ jobs:
 
       - name: save vuls.db schema_version
         id: save_scheme_version
-        run: echo "schema_version=$(bbolt get ./vuls.db "metadata" "db" | jq .schema_version)" >> $GITHUB_OUTPUT
+        run: echo "schema_version=$(bbolt get -format bytes ./vuls.db "metadata" "db" | jq .schema_version)" >> $GITHUB_OUTPUT
 
       - name: compact vuls.db
         run: |
