@@ -101,8 +101,11 @@ db-build:
 .PHONY: db-add
 db-add: 
 	oras pull ghcr.io/vulsio/vuls-data-db:${REPO}
-	git clone -b ${BRANCH} ${REPO}.bundle ${REPO}
-	rm ${REPO}.bundle
+	tar -xf ${REPO}.tar.zst
+	rm ${REPO}.tar.zst
+	git -C ${REPO} checkout ${BRANCH}
+	git -C ${REPO} restore
+
 	cat ${REPO}/datasource.json | jq --arg hash $$(git -C ${REPO} rev-parse HEAD) --arg date $$(git -C ${REPO} show -s --format=%at | xargs -I{} date -d @{} --utc +%Y-%m-%dT%TZ) '.extracted.commit |= $$hash | .extracted.date |= $$date' > tmp
 	mv tmp ${REPO}/datasource.json
 	vuls db add --dbtype ${DBTYPE} --dbpath ${DBPATH} ${REPO}
