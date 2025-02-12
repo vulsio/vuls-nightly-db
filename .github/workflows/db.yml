@@ -18,6 +18,16 @@ jobs:
           remove-codeql: "true"
           remove-docker-images: "true"
 
+      - name: Install Oras
+        run: |
+          # https://oras.land/docs/installation/#linux
+          VERSION="1.2.2"
+          curl -LO "https://github.com/oras-project/oras/releases/download/v${VERSION}/oras_${VERSION}_linux_amd64.tar.gz"
+          mkdir -p oras-install/
+          tar -zxf oras_${VERSION}_*.tar.gz -C oras-install/
+          sudo mv oras-install/oras /usr/local/bin/
+          rm -rf oras_${VERSION}_*.tar.gz oras-install/
+
       - name: Check out code into the Go module directory
         uses: actions/checkout@v4
         with:
@@ -48,16 +58,6 @@ jobs:
           bbolt compact -o ./vuls-compact.db ./vuls.db
           mv ./vuls-compact.db ./vuls.db
           zstd --ultra -22 -T4 --rm ./vuls.db -o ./vuls.db.zst
-
-      - name: Install Oras
-        run: |
-          # https://oras.land/docs/installation/#linux
-          VERSION="1.2.0"
-          curl -LO "https://github.com/oras-project/oras/releases/download/v${VERSION}/oras_${VERSION}_linux_amd64.tar.gz"
-          mkdir -p oras-install/
-          tar -zxf oras_${VERSION}_*.tar.gz -C oras-install/
-          sudo mv oras-install/oras /usr/local/bin/
-          rm -rf oras_${VERSION}_*.tar.gz oras-install/
 
       - name: Login to GitHub Packages Container registry
         uses: docker/login-action@v3
