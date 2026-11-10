@@ -1,0 +1,158 @@
+{
+  "branch": "nightly",
+  "registry": "ghcr.io/vulsio/vuls-data-db",
+  "sources": [
+    {
+      "name": "alma-errata",
+      "commit": "1804271ad7435669f0caa26b3b46116788636de2"
+    },
+    {
+      "name": "alpine-secdb",
+      "commit": "87c58a52fe9ec4cb5e2b4887fc4eda52a809318e"
+    },
+    {
+      "name": "amazon",
+      "commit": "a683c4c319b9555b938c768eeb3df8bc879db8fe"
+    },
+    {
+      "name": "apple-security-releases",
+      "commit": "7bfd27bf5523d885bb0f74698c17ace0d778689f"
+    },
+    {
+      "name": "cisa-kev",
+      "commit": "593f052f12626e605ca6e028972766e2b41d4a46"
+    },
+    {
+      "name": "cisco-json",
+      "commit": "595b1339b2bdc5cb9b22a0b2fbfd9f0108caae1e"
+    },
+    {
+      "name": "debian-security-tracker-salsa",
+      "commit": "833a83ffdc1cfde8dd75e0cd88b1de5a33783eec"
+    },
+    {
+      "name": "enisa-euvd-list",
+      "commit": "75393681da2d59047f29096825cd235fb6e0d1ae"
+    },
+    {
+      "name": "enisa-kev",
+      "commit": "b6a5d250f54010c40b4a1f4ffc00a1bb6b30bd99"
+    },
+    {
+      "name": "exploit-exploitdb",
+      "commit": "15497ce87174566b26a58cf04b8a6e978fb9adce"
+    },
+    {
+      "name": "exploit-github",
+      "commit": "829b25fc1131ebcdbe0a2a86722d3a5b6d00cdeb"
+    },
+    {
+      "name": "exploit-inthewild",
+      "commit": "cf88587f4d40708cdd7380adb5ff0b8d31ffe0d3"
+    },
+    {
+      "name": "exploit-trickest",
+      "commit": "fd8043d79d6e48ff0d9081856746a6fdf10c1bb8"
+    },
+    {
+      "name": "fedora-api",
+      "commit": "6ad6a8d16946c1499c0bb5e0f7ca63157a9ef081"
+    },
+    {
+      "name": "fortinet-csaf",
+      "commit": "e3d86dff237106641e5874d22f5332f23f19b3dc"
+    },
+    {
+      "name": "fortinet-cvrf",
+      "commit": "75e749f9de1b349acdc0a4199d6442bfbfa54c91"
+    },
+    {
+      "name": "jvn-feed-rss",
+      "commit": "dea94e7c8f71a69a4081097af6b005d154e85300"
+    },
+    {
+      "name": "microsoft-bulletin",
+      "commit": "7956baa09114d1687db9c265da99550065ab86c4"
+    },
+    {
+      "name": "microsoft-cvrf",
+      "commit": "f1195cfa007716b0369b8d64a70188088718841c"
+    },
+    {
+      "name": "microsoft-msuc",
+      "commit": "5f31f031ee3e448d52280834d71a88a4f7ebb10b"
+    },
+    {
+      "name": "microsoft-servicing",
+      "commit": "78e3cf1e82cf47616b8a6f05ff5817e2a7e41ebb"
+    },
+    {
+      "name": "microsoft-wsusscn2",
+      "commit": "d4ae017055f191bd9da9123913f516fc2aedc3ae"
+    },
+    {
+      "name": "mitre-attack",
+      "commit": "b63e83e03ef5335d6dee2ff272d34511835eefb8"
+    },
+    {
+      "name": "mitre-capec",
+      "commit": "2ebb078d445e2f46ff4b3f4f7ece0d7ef634ffb0"
+    },
+    {
+      "name": "mitre-cve-v5",
+      "commit": "059f2bf7b711ea0fd39437daf463ab629a4ee76f"
+    },
+    {
+      "name": "mitre-cwe",
+      "commit": "6c7458093edd0d2d740e88327ba777ccc08eaaa5"
+    },
+    {
+      "name": "msf",
+      "commit": "1cbacb13faa7ea4df1934ea404086adcc7afe687"
+    },
+    {
+      "name": "nuclei-repository",
+      "commit": "bcd9f6db270b7dcf08ab4c6e1e305d00d97091f7"
+    },
+    {
+      "name": "nvd-feed-cve-v2",
+      "commit": "dc1b44aa1be53400f8c5060e9d6007bef36b68c3"
+    },
+    {
+      "name": "oracle-linux",
+      "commit": "7d807dc3e986a1c787eefb739a4ef7e25711b56b"
+    },
+    {
+      "name": "paloalto-json",
+      "commit": "1d0fa88fbfc1baefd90650bd505bcaba0ddc35e2"
+    },
+    {
+      "name": "redhat-cve",
+      "commit": "2986642c27ab6fe32c2c6db7db61bf88f732c313"
+    },
+    {
+      "name": "redhat-vex-v1-rhel",
+      "commit": "4b7f3bf72a8adda721ae19eeaa081b4bb6eb00c7"
+    },
+    {
+      "name": "rocky-errata",
+      "commit": "cf853c916c7018646b7ebf6a8603a537b43391c7"
+    },
+    {
+      "name": "suse-oval",
+      "commit": "1a4c81242b1ac260310857df88300181c8b574bd"
+    },
+    {
+      "name": "ubuntu-cve-tracker",
+      "commit": "6659e068f6cb806a320028e92cf3241f20a4d047"
+    },
+    {
+      "name": "vulncheck-kev",
+      "commit": "607a5aa364b1a76eb52e8ab6219d6be6393bf187"
+    },
+    {
+      "name": "vulncheck-nist-nvd2",
+      "commit": "2995ec2ebf19a40c83e21acf8882c5f87b92da52"
+    }
+  ]
+}
