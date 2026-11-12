@@ -37,10 +37,11 @@ vuls db build --lock db-nightly.lock.json --dbpath ./vuls.db
   back).
 - **Pull requests here**: adding or removing a source (and reordering). A
   source added here also needs an entry in `db-guard.json` in vuls-data-db.
-  Check the file before opening the PR:
+  Check the file before opening the PR by building a db of the added source
+  alone (the lock is validated before anything is pulled):
 
   ```sh
-  vuls db build --lock db-nightly.lock.json --validate-only
+  jq '.sources |= map(select(.name == "<name>"))' db-nightly.lock.json | vuls db build --lock - --dbpath ./check.db
   ```
 
 Every commit records who or which run moved what. This repository has no
