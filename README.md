@@ -3,8 +3,8 @@
 Lock files for the vuls DBs published to `ghcr.io/vulsio/vuls-nightly-db`.
 
 A lock is the recipe of one published DB: which extracted branch it reads
-and, for every data source in the DB, the commit of
-`ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-<name>` it is built from.
+and, for every data source in the DB, the OCI repository of its extracted
+dotgit and the commit it is built from.
 
 | Lock | DB | Built by |
 | --- | --- | --- |
@@ -13,9 +13,12 @@ and, for every data source in the DB, the commit of
 ```json
 {
   "branch": "nightly",
-  "registry": "ghcr.io/vulsio/vuls-data-db",
   "sources": [
-    {"name": "alma-errata", "commit": "<40 hex>"}
+    {
+      "name": "alma-errata",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-alma-errata",
+      "commit": "<40 hex>"
+    }
   ]
 }
 ```
@@ -35,8 +38,12 @@ vuls db build --lock db-nightly.lock.json --dbpath ./vuls.db
 - **`approve.yml`** in vuls-data-db, run by hand: sets a source's `commit`
   (e.g. after a guard failed on a change judged correct, or to roll a source
   back).
-- **Pull requests here**: adding or removing a source (and reordering). A
-  source added here also needs an entry in `db-guard.json` in vuls-data-db.
+- **Pull requests here**: adding or removing a source, reordering, or
+  changing a source's `repository`. A source added here also needs an entry
+  in `db-guard.json` in vuls-data-db. Review a new or changed `repository`
+  closely: the build pulls whatever dotgit it names and checks it out (its
+  `.git/config` applies), and nothing but such a pull request can change it,
+  since the guard and `approve.yml` only move commits.
   Check the file before opening the PR by building a db of the added source
   alone (the lock is validated before anything is pulled):
 
