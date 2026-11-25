@@ -27,7 +27,7 @@ The same DB can be rebuilt anywhere from a lock at any commit of this
 repository:
 
 ```sh
-vuls db build --lock db-nightly.lock.json --dbpath ./vuls.db
+vuls db build db-nightly.lock.json --dbpath ./vuls.db
 ```
 
 ## Who changes a lock
@@ -48,7 +48,7 @@ vuls db build --lock db-nightly.lock.json --dbpath ./vuls.db
   alone (the lock is validated before anything is pulled):
 
   ```sh
-  jq '.sources |= map(select(.name == "<name>"))' db-nightly.lock.json | vuls db build --lock - --dbpath ./check.db
+  jq '.sources |= map(select(.name == "<name>"))' db-nightly.lock.json | vuls db build - --dbpath ./check.db
   ```
 
 Every commit records who or which run moved what. This repository has no
