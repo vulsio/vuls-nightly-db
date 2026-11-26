@@ -4,7 +4,8 @@ Lock files for the vuls DBs published to `ghcr.io/vulsio/vuls-nightly-db`.
 
 A lock is the recipe of one published DB: which extracted branch it reads
 and, for every data source in the DB, the OCI repository of its extracted
-dotgit and the commit it is built from.
+dotgit (the `.git` of the extracted repository, without a worktree, pushed
+as an OCI image) and the commit it is built from.
 
 | Lock | DB | Built by |
 | --- | --- | --- |
