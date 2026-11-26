@@ -24,7 +24,11 @@ dotgit and the commit it is built from.
 ```
 
 The same DB can be rebuilt anywhere from a lock at any commit of this
-repository:
+repository, as long as every source's commit is still in its dotgit. The
+`repository` tag moves with the extracted branch and keeps its history, so
+the `commit` is what pins the data; once that history has been truncated past
+a commit, the build stops with an error naming it instead of building
+something else:
 
 ```sh
 vuls db build db-nightly.lock.json --dbpath ./vuls.db
