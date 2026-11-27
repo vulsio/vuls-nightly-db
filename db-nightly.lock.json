@@ -1,0 +1,195 @@
+{
+  "branch": "nightly",
+  "sources": [
+    {
+      "name": "alma-errata",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-alma-errata",
+      "commit": "f4668dbe8dc08c641e7a95df861a52d23622624f"
+    },
+    {
+      "name": "alpine-secdb",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-alpine-secdb",
+      "commit": "fc3a13c3cf610d4b1b87c7dfab7ff2f74c68fd58"
+    },
+    {
+      "name": "amazon",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-amazon",
+      "commit": "23e5a7706c45de84fc694f5708df095bc880c8a8"
+    },
+    {
+      "name": "apple-security-releases",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-apple-security-releases",
+      "commit": "7bfd27bf5523d885bb0f74698c17ace0d778689f"
+    },
+    {
+      "name": "cisa-kev",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-cisa-kev",
+      "commit": "78ae0804e8abaed40cc0198b99552129aea9e53e"
+    },
+    {
+      "name": "cisco-json",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-cisco-json",
+      "commit": "de107956e4b10ae42555e7bea1e0eeaa1d25a90a"
+    },
+    {
+      "name": "debian-security-tracker-salsa",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-debian-security-tracker-salsa",
+      "commit": "606fc9f59e935ce34dbede9bbfb2032cd2e6838b"
+    },
+    {
+      "name": "enisa-euvd-list",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-enisa-euvd-list",
+      "commit": "ba8850d51e1f312b39ff2e2f3e1bf89a1bfd0fdd"
+    },
+    {
+      "name": "enisa-kev",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-enisa-kev",
+      "commit": "9f03018ebdb6705d646343689b27faab09e3d811"
+    },
+    {
+      "name": "exploit-exploitdb",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-exploit-exploitdb",
+      "commit": "3f4221c15083ddea6680880ac05c80de54d85a67"
+    },
+    {
+      "name": "exploit-github",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-exploit-github",
+      "commit": "494da3eb96a9fd874698e341817a74875afd9144"
+    },
+    {
+      "name": "exploit-inthewild",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-exploit-inthewild",
+      "commit": "cf88587f4d40708cdd7380adb5ff0b8d31ffe0d3"
+    },
+    {
+      "name": "exploit-trickest",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-exploit-trickest",
+      "commit": "11540e5a9d3711b86c1aad28cb1d9c21acb92038"
+    },
+    {
+      "name": "fedora-api",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-fedora-api",
+      "commit": "ae54f561eb834d0f087f9d19e96ea6401cfb5238"
+    },
+    {
+      "name": "fortinet-csaf",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-fortinet-csaf",
+      "commit": "b35397e140ba5dce6bbfcd53a8c7cc8e083eaee4"
+    },
+    {
+      "name": "fortinet-cvrf",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-fortinet-cvrf",
+      "commit": "48d8f6a42199022f818d4f2821270ffa3e947a62"
+    },
+    {
+      "name": "jvn-feed-rss",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-jvn-feed-rss",
+      "commit": "9bfa8f8265c4513bbd949bcca650cfac6780839b"
+    },
+    {
+      "name": "microsoft-bulletin",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-microsoft-bulletin",
+      "commit": "7956baa09114d1687db9c265da99550065ab86c4"
+    },
+    {
+      "name": "microsoft-cvrf",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-microsoft-cvrf",
+      "commit": "4242a6f3ec70d4853f869aedd4bfb08d7f6f8bb0"
+    },
+    {
+      "name": "microsoft-msuc",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-microsoft-msuc",
+      "commit": "035cecfcd384c8728f7c593ab4c701bfa8584adf"
+    },
+    {
+      "name": "microsoft-servicing",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-microsoft-servicing",
+      "commit": "cf25eaf520a874befd56c60fc2a03c913552a6d6"
+    },
+    {
+      "name": "microsoft-wsusscn2",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-microsoft-wsusscn2",
+      "commit": "d12859fdcf4ecd7aeb0cd425bea85c7856f74853"
+    },
+    {
+      "name": "mitre-attack",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-mitre-attack",
+      "commit": "b63e83e03ef5335d6dee2ff272d34511835eefb8"
+    },
+    {
+      "name": "mitre-capec",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-mitre-capec",
+      "commit": "2ebb078d445e2f46ff4b3f4f7ece0d7ef634ffb0"
+    },
+    {
+      "name": "mitre-cve-v5",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-mitre-cve-v5",
+      "commit": "f1c29ac0f2e42750cdd4e3f381dac41fe9f4ff3f"
+    },
+    {
+      "name": "mitre-cwe",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-mitre-cwe",
+      "commit": "bd7c98f15a173e76605be420e29c84ace1793cc3"
+    },
+    {
+      "name": "msf",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-msf",
+      "commit": "2d8e63a9a45391c60a0ff0795290dbc44d3796d1"
+    },
+    {
+      "name": "nuclei-repository",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-nuclei-repository",
+      "commit": "45e47340f4f96604352fb456c1eb945d0336b2c0"
+    },
+    {
+      "name": "nvd-feed-cve-v2",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-nvd-feed-cve-v2",
+      "commit": "6bd46779d0204adf65d629c93e6b1fd2ea66f4e6"
+    },
+    {
+      "name": "oracle-linux",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-oracle-linux",
+      "commit": "184f3dee605cbfed911ff4bec2c9bbb94c3d5007"
+    },
+    {
+      "name": "paloalto-json",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-paloalto-json",
+      "commit": "b9d7e7fb45f7d7ed7dd91508f7a49d875f5a8c9a"
+    },
+    {
+      "name": "redhat-cve",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-redhat-cve",
+      "commit": "0504dc1c34f90d1bfe7b1444aa2e543d4d9621bc"
+    },
+    {
+      "name": "redhat-vex-v1-rhel",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-redhat-vex-v1-rhel",
+      "commit": "14a2f3125b045418fc4b1b74fc87a600ee395781"
+    },
+    {
+      "name": "rocky-errata",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-rocky-errata",
+      "commit": "59917ac1e22fc761d897ac161f45dcef41166249"
+    },
+    {
+      "name": "suse-oval",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-suse-oval",
+      "commit": "f920f8bdae0beea6b1165a883a6c0ce1ab408c25"
+    },
+    {
+      "name": "ubuntu-cve-tracker",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-ubuntu-cve-tracker",
+      "commit": "ad65df1ab46f8d8526b77447bb9ea671619f6881"
+    },
+    {
+      "name": "vulncheck-kev",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-vulncheck-kev",
+      "commit": "a3fbcdcc1a4010806be476d39e9527edf5f76bd9"
+    },
+    {
+      "name": "vulncheck-nist-nvd2",
+      "repository": "ghcr.io/vulsio/vuls-data-db:vuls-data-extracted-vulncheck-nist-nvd2",
+      "commit": "30b2b7fad7e57eca545dbf000d387a71c1a16c85"
+    }
+  ]
+}
